@@ -86,13 +86,11 @@ struct Home: View {
                                 /// Update to previous month
                                 monthUpdate(false)
                             }
-                            .contentShape(.rect)
                             
                             Button("", systemImage: "chevron.right") {
                                 /// Update to next month
                                 monthUpdate(true)
                             }
-                            .contentShape(.rect)
                         }
                         .font(.title3)
                         .foregroundStyle(.primary)
@@ -125,7 +123,6 @@ struct Home: View {
                                         .opacity(Calendar.current.isDate(day.date, inSameDayAs: selectedDate) ? 1 : 0)
                                         .offset(y: progress * -2)
                                 })
-                                .contentShape(.rect)
                                 .onTapGesture {
                                     selectedDate = day.date
                                 }
@@ -133,7 +130,6 @@ struct Home: View {
                     })
                     .frame(height: calendarGridHeight - ((calendarGridHeight - 50) * progress), alignment: .top)
                     .offset(y: (monthProgress * -50) * progress)
-                    .contentShape(.rect)
                     .clipped()
                 }
                 .offset(y: progress * -50)
@@ -148,7 +144,6 @@ struct Home: View {
             .background(.red.gradient)
             /// Sticking it to top
             .clipped()
-            .contentShape(.rect)
             .offset(y: -minY)
         }
         .frame(height: calendarHeight)
