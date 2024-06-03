@@ -12,6 +12,11 @@
 		6B197C322C09339D00AD1D9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B197C312C09339D00AD1D9C /* Assets.xcassets */; };
 		6B197C352C09339D00AD1D9C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B197C342C09339D00AD1D9C /* Preview Assets.xcassets */; };
 		6B197C3C2C0933F500AD1D9C /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B197C3B2C0933F500AD1D9C /* Home.swift */; };
+		6BFA4B2F2C0E0C9800BABE4A /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFA4B2E2C0E0C9800BABE4A /* CardView.swift */; };
+		6BFA4B312C0E0D1F00BABE4A /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFA4B302C0E0D1F00BABE4A /* CalendarView.swift */; };
+		6BFA4B332C0E0EB400BABE4A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFA4B322C0E0EB400BABE4A /* Extensions.swift */; };
+		6BFA4B352C0E0F0500BABE4A /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFA4B342C0E0F0500BABE4A /* Day.swift */; };
+		6BFA4B372C0E102300BABE4A /* CustomScrollBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFA4B362C0E102300BABE4A /* CustomScrollBehavior.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +26,11 @@
 		6B197C312C09339D00AD1D9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B197C342C09339D00AD1D9C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6B197C3B2C0933F500AD1D9C /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		6BFA4B2E2C0E0C9800BABE4A /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		6BFA4B302C0E0D1F00BABE4A /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		6BFA4B322C0E0EB400BABE4A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		6BFA4B342C0E0F0500BABE4A /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
+		6BFA4B362C0E102300BABE4A /* CustomScrollBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScrollBehavior.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +66,9 @@
 				6B197C2D2C09339C00AD1D9C /* Calendar_JournalApp.swift */,
 				6B197C2F2C09339C00AD1D9C /* ContentView.swift */,
 				6B197C3B2C0933F500AD1D9C /* Home.swift */,
+				6BFA4B302C0E0D1F00BABE4A /* CalendarView.swift */,
+				6BFA4B2E2C0E0C9800BABE4A /* CardView.swift */,
+				6BFA4B382C0E106800BABE4A /* Backend */,
 				6B197C312C09339D00AD1D9C /* Assets.xcassets */,
 				6B197C332C09339D00AD1D9C /* Preview Content */,
 			);
@@ -68,6 +81,16 @@
 				6B197C342C09339D00AD1D9C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6BFA4B382C0E106800BABE4A /* Backend */ = {
+			isa = PBXGroup;
+			children = (
+				6BFA4B362C0E102300BABE4A /* CustomScrollBehavior.swift */,
+				6BFA4B342C0E0F0500BABE4A /* Day.swift */,
+				6BFA4B322C0E0EB400BABE4A /* Extensions.swift */,
+			);
+			path = Backend;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,9 +163,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BFA4B352C0E0F0500BABE4A /* Day.swift in Sources */,
+				6BFA4B312C0E0D1F00BABE4A /* CalendarView.swift in Sources */,
+				6BFA4B332C0E0EB400BABE4A /* Extensions.swift in Sources */,
 				6B197C302C09339C00AD1D9C /* ContentView.swift in Sources */,
 				6B197C3C2C0933F500AD1D9C /* Home.swift in Sources */,
+				6BFA4B2F2C0E0C9800BABE4A /* CardView.swift in Sources */,
 				6B197C2E2C09339C00AD1D9C /* Calendar_JournalApp.swift in Sources */,
+				6BFA4B372C0E102300BABE4A /* CustomScrollBehavior.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
