@@ -9,22 +9,30 @@
 import SwiftUI
 
 struct CardView: View {
+    let day: Day
+    
     var body: some View {
         RoundedRectangle(cornerRadius: 15)
             .fill(.blue.gradient)
             .frame(height: 70)
             .overlay(alignment: .leading) {
                 HStack(spacing: 12) {
-                    Circle()
-                        .frame(width: 40, height: 40)
+                    ZStack {
+                        Circle()
+                            .frame(width: 40, height: 40)
+                        Text(day.shortSymbol)
+                            .fontWeight(.bold)
+                            .foregroundStyle(Color.white)
+                    }
                     
-                    VStack(alignment: .leading, spacing: 6, content: {
-                        RoundedRectangle(cornerRadius: 5)
-                            .frame(width: 100, height: 5)
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text("\(day.weekDayName)")
+                            .fontWeight(.bold)
+                            .foregroundStyle(Color.white)
                         
                         RoundedRectangle(cornerRadius: 5)
                             .frame(width: 70, height: 5)
-                    })
+                    }
                 }
                 .foregroundStyle(.white.opacity(0.25))
                 .padding(15)
@@ -33,5 +41,7 @@ struct CardView: View {
 }
 
 #Preview {
-    CardView()
+    var day = Day.dummy
+    day.ignored = false
+    return CardView(day: day)
 }

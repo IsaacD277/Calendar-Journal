@@ -18,8 +18,8 @@ struct Home: View {
                 CalendarView(safeArea: safeArea)
                 
                 VStack(spacing: 15) {
-                    ForEach(1...15, id: \.self) { _ in
-                        CardView()
+                    ForEach(extractDates(.currentMonth), id: \.self) { day in
+                        CardView(day: day) // NOT REAL
                     }
                 }
                 .padding(15)
@@ -33,6 +33,3 @@ struct Home: View {
 #Preview {
     ContentView()
 }
-
-/// Customer Scroll Behavior
-
