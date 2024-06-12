@@ -19,7 +19,7 @@ struct Home: View {
                 
                 VStack(spacing: 15) {
                     ForEach(extractDates(.currentMonth), id: \.self) { day in
-                        CardView(day: day) // NOT REAL
+                        Card(day: day)
                     }
                 }
                 .padding(15)

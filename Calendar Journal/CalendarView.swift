@@ -10,6 +10,7 @@ import SwiftUI
 struct CalendarView: View {
     @State private var selectedMonth: Date = .currentMonth
     @State private var selectedDate: Date = .now
+    @State private var isCollapsed: Bool = true
     var safeArea: EdgeInsets
     
     var body: some View {
@@ -51,7 +52,6 @@ struct CalendarView: View {
                             Button("", systemImage: "chevron.left") {
                                 /// Update to previous month
                                 monthUpdate(false)
-                                print(safeArea)
                             }
                             
                             Button("", systemImage: "chevron.right") {
@@ -126,6 +126,9 @@ struct CalendarView: View {
             .clipped()
             /// Sticking it to top
             .offset(y: -minY)
+            .onChange(of: progress) { oldState, newState in
+                isCollapsed = newState > 0.5
+            }
             .gesture(
                 DragGesture()
                     .onEnded { value in
@@ -215,5 +218,4 @@ struct CalendarView: View {
 
 #Preview {
     ContentView()
-    // CalendarView(safeArea: EdgeInsets(top: 59.0, leading: 0.0, bottom: 34.0, trailing: 0.0))
 }

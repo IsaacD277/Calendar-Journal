@@ -58,3 +58,17 @@ extension View {
         return days
     }
 }
+
+struct BlueGradientTextStyle: ViewModifier {
+    var foregroundColor = Color.blue.gradient
+    var backgroundColor = Color.white.opacity(0.85)
+    
+    func body(content: Content) -> some View {
+        content
+            .foregroundStyle(backgroundColor)
+            .background(
+                content
+                    .foregroundStyle(foregroundColor)
+            )
+    }
+}
