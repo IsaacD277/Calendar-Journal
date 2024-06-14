@@ -56,13 +56,29 @@ struct Clock: View {
                     Hand(angle: totalAngle)
                         .frame(width: geometry.size.width, height: geometry.size.height)
                 }
-                .gesture(DragGesture().onChanged({ value in
-                    onDrag(value: value, in: geometry.size)
-                }).onEnded({ _ in
-                    withAnimation {
-                        snapToNearest5MinuteMark()
-                    }
-                }))
+                .gesture(
+                    DragGesture()
+                        .onChanged({ value in
+                            onDrag(value: value, in: geometry.size)
+                        })
+                        .onEnded({ value in
+                            let velocity = CGSize(
+                                width: value.predictedEndLocation.x - value.location.x, height: value.predictedEndLocation.y - value.location.y
+                            )
+                            
+                            // Example
+                            
+                            if abs(velocity.height) > 10 || abs(velocity.width) > 10 {
+                                withAnimation {
+                                    snapToNearest5MinuteMark()
+                                }
+                            } else {
+                                withAnimation {
+                                    snapToNearest5MinuteMark(false)
+                                }
+                            }
+                        })
+                )
                 .rotationEffect(Angle(degrees: -89))
                 .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
             }
@@ -98,12 +114,11 @@ struct Clock: View {
         }
     }
 
-
-    
-    func snapToNearest5MinuteMark() {
+    func snapToNearest5MinuteMark(_ five: Bool = true) {
         // 30 degrees per 5 minutes
         let nearest5MinuteMark = round(totalAngle / 30) * 30
-        totalAngle = nearest5MinuteMark
+        let nearestMinuteMark = round(totalAngle / 6) * 6
+        totalAngle = five ? nearest5MinuteMark : nearestMinuteMark
         progress = CGFloat(totalAngle / 360)
     }
     

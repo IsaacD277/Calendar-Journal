@@ -40,7 +40,6 @@ struct Card: View {
                     
                     Button(action: {
                         showingAddNotesView.toggle()
-                        print("Card button tapped!")
                     }, label: {
                         HStack {
                             Image(systemName: "plus")
