@@ -60,8 +60,11 @@ extension View {
 }
 
 struct BlueGradientTextStyle: ViewModifier {
+    @Environment(\.colorScheme) var colorScheme
     var foregroundColor = Color.blue.gradient
-    var backgroundColor = Color.white.opacity(0.85)
+    var backgroundColor: Color {
+        colorScheme == .dark ? Color.white.opacity(0.85) : Color.gray.opacity(0.85)
+    }
     
     func body(content: Content) -> some View {
         content
